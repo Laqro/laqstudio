@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Night City</title>
+    
+    <style>
+       
+        .cyber-kutu {
+
+            margin: 50px auto;
+            width: 400px;
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 2px solid #ff4757;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(255, 71, 87, 0.5); 
+
+        }
+
+       body{
+
+       background-image: url('NightCity.jpg.png');
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+       background-color: #1a1a1a;
+       font-family: 'Bitcount Prop Single', monospace;
+       color: white;
+       text-align: center;
+       margin: 0;
+       padding-top: 20px;
+
+       }
+
+
+
+       input[type="radio"] {
+        transform: scale(1.5);
+        margin-right: 10px;
+        accent-color: #ff4757;
+
+       }
+
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+    <div class="cyber-kutu">
+        <h2 style="color: #ff4757;font-family:'Silkscreen', cursive; font-size: 20px ; color: crimson;">Night City'e Kayıt Ol</h2><br><br>
+
+        <form id="night-city-form" method="post" style="font-family: Bitcount Prop Single;">
+            <label for="kodadi">Kod Adın</label><br>
+            <input type="text" id="kodadi" name="kodadi" placeholder="Örn: V" required><br><br>
+
+            <label for="sifre">Gizli Sifre</label><br>
+            <input type="password" id="sifre" name="sifre" required><br><br>
+
+            <label for="eposta">İletişim Adresi</label><br>
+            <input type="email" id="eposta" name="eposta" placeholder="mail@ornek.com"><br><br>
+
+            <label for="neon">Neon Rengini Seç</label><br>
+            <input type="color" id="neon" name="neon" value="#ff0000 "><br><br>
+
+            <textarea name="message" placeholder="Mesajınız"></textarea><br><br>
+ 
+     
+     
+
+    <div style="display: table; margin: 0 auto; text-align: left;">
+        <h3 style="color: white;">Geçmişini Seç</h3>
+        
+            <input type="radio" id="nomad" name="geçmiş" value="nomad">
+            <label for="nomad" style="color: #a29bfe;">Göçebe</label><br><br>
+
+            <input type="radio" id="streetkid" name="geçmiş" value="streetkid">
+            <label for="streetkid" style="color: #ffeaa7;">Sokak Çocuğu</label><br><br>
+
+            <input type="radio" id="corpo" name="geçmiş" value="corpo">
+            <label for="corpo" style="color: #81ecec;">Şirketçi</label><br><br>
+            <input type="radio" id="unknown" name="geçmiş" value="unknown">
+            <label for="unknown" style="color: #0065d8c8;">Bilinmiyor</label><br><br>
+            <script>
+                  function secimiSifirla() {
+
+                    //'gecmis' ismindeki tüm radyo butonlarını buluyoruz
+                    var secenekler = document.getElementsByName ('geçmiş');
+
+                    // Hepsini tek tek gezip işareti kaldırıyoruz
+                    for(var i = 0; i <secenekler.length; i++) {
+                        secenekler[i].checked = false;
+                    }
+                  }
+                
+            </script>
+    </div>     
+            
+            <button type="button" onclick="secimiSifirla()" style="background-color: white; color: black; border: none; padding: 5px 10px; cursor: pointer; font-size: 15px; margin-top: 5px;">
+                Seçimi Temizle
+            </button>    
+         
+        <h4 style="color: white;">Dogum Yeri</h4>
+            
+            <select name="bolge" id="bolge" style="margin-bottom: 10px; padding: 5px;">
+               
+                  <option value="watson">Watson (Çete Bölgesi)</option>
+                  <option value="city_center">City Center (Zengin Bölgesi)</option>
+                  <option value="pacifia">Pacifia (Terk Edilmiş)</option>
+        
+
+            </select><br><br>
+
+            <input type="checkbox" id="risk" name="risk_kabul" required>
+            <label for="risk" style="color: #ff4757; font-size: 15px;">
+                Bu işlem geri alınamaz. Ölüm riskini kabul ediyorum.
+            </label><br><br>
+
+            
+            <button type="submit" id="hack-btn" style="background-color: #ff4757; color: white; cursor: pointer; border:none; padding:10px 20px;">SİSTEME SIZ</button>
+
+             
+
+            
+
+     </form>
+    
+     <p id="sonuc-yazisi" style="color: #2ed573; display: none; margin-top:10px;">> ERİŞİM BAŞARILI. HOŞGELDİNİZ.</p>
+
+    </div>
+
+
+<script type="text/javascript">
+   (function(){
+      // BURAYA PUBLIC KEY GELECEK
+      emailjs.init("W3SNzIHzzh0N4En_7");
+   })();
+
+   document.getElementById('night-city-form').addEventListener('submit', function(event) {
+       event.preventDefault(); // Sayfanın yenilenmesini engeller
+
+       const btn = document.getElementById('hack-btn');
+       const originalText = btn.innerText;
+       
+       btn.innerText = 'HACKING...'; // Buton yazısı değişsin
+
+       // BURAYA SERVICE VE TEMPLATE ID GELECEK
+       const serviceID = 'service_p8gem3b';
+       const templateID = 'template_u3muqkj';
+
+       emailjs.sendForm(serviceID, templateID, this)
+           .then(() => {
+               btn.innerText = 'BAŞARILI';
+               document.getElementById('night-city-form').reset(); // Formu temizle
+               document.getElementById('sonuc-yazisi').style.display = 'block'; // Mesajı göster
+               
+               // 3 saniye sonra mesajı gizle ve butonu düzelt
+               setTimeout(() => {
+                    document.getElementById('sonuc-yazisi').style.display = 'none';
+                    btn.innerText = originalText;
+               }, 3000);
+           }, (err) => {
+               btn.innerText = 'HATA!';
+               alert('Bağlantı koptu: ' + JSON.stringify(err));
+               btn.innerText = originalText;
+           });
+   });
+</script>
+
+
+</body>
+</html>
