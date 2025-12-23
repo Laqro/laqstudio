@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night City</title>
+
+    <style>
+
+       .ust-menu{
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;     
+        padding: 30px;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-bottom: 2px solid #eedc12;
+        box-shadow: 0 0 15px #eedc12;
+       }
+ 
+       .menu-link{
+           text-decoration: none;
+           color: #fff;
+           font-family: 'Bitcount Prop Single', monospace;
+           font-weight: bold;
+           background-color: rgba(255, 255, 255, 0.1);
+           padding: 10px 30px;
+           border: 1px;
+           border-radius: 15px;
+           transition: 0.4s;
+           letter-spacing: 2px;
+
+       }
+
+       .menu-link:hover{
+          background-color: #2bd1ff;
+          border-radius: 15px;
+          color: #000;
+          box-shadow: 0 0 20px #2bd1ff;
+
+       }
+    
+    
+
+    body{
+
+       background-image: url('NightCity.png');
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+       background-color: #1a1a1a;
+       font-family: 'Bitcount Prop Single', monospace;
+       color: white;
+       text-align: center;
+       margin: 0;
+       padding-top: 20px;
+
+    }
+    
+    .hakkimda-karti {
+        margin: 50px auto;
+        width: 700px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 2px solid #eedc12;
+        height: 550px;
+        padding: 15px;
+        box-shadow: 0 0 20px rgba(255, 237, 71, 0.5); 
+    }
+
+    .profil-foto {
+       
+       border: 1px solid #eedc12;
+       border-radius: 20px;
+       width: 20%;
+       
+    }
+
+    .dil-kutusu {
+        margin: 20px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .dil-btn {
+        text-decoration: none;
+        font-family: 'Silkscreen', cursive;
+        font-weight: bold;
+        color: #eedc12;
+        border: 2px solid #eedc12;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: 0.3s;
+        font-size: 14px;
+    }
+
+    .dil-btn:hover, .dil-btn.aktif {
+        background-color: #eedc12;
+        color: #000;
+        box-shadow: 0 0 10px #eedc12;
+
+    }
+
+    @media (max-width: 768px){
+
+           .ust-menu {
+               flex-direction: column;
+               height: auto;
+               padding: 20px 10px;
+               gap: 15px;
+
+           }
+
+           .menu-link{
+               width: 100%;
+               text-align: center;
+               display: block;
+               box-sizing: border-box;
+           }
+
+           .hakkimda-karti{
+            width: 90%;
+            margin-top: 20px;
+            padding: 20px;
+           }
+
+    }
+
+
+
+
+    </style>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+     <nav>
+        <nav class="ust-menu">
+        <a href="#" class="menu-link">MAIN PAGE</a>
+        <a href="hakkimda.html" class="menu-link">ABOUT ME</a>
+        <a href="index.html" class="menu-link">REGISTER</a>
+
+     </nav>
+
+    <div class="hakkimda-karti">
+        <img src="kanekiken.jpg" class="profil-foto">
+        <h2 style="color: #0ea5e5; font-family: 'Silkscreen', cursive;">Who Am I?</h2>
+
+        <p style="font-size: large; font-family: 'Silkscreen', cursive; font-weight: bold;">
+        Hello, I'm Ali. I am a Freshman student in Web Design and Coding at Anadolu University. <br> <br>
+
+        Coding has always intrigued me, but I lacked the courage to start. With the beginning of my academic journey, I finally took that big step. <br><br>
+
+        This website you are viewing (Project Night City) is my very first project and my personal learning laboratory. I am just at the beginning of the road, but I strive to learn something new every single day. By updating this project almost daily, I implement every new technique I learn right here.
+        </p>  
+        
+    </div>
+
+    <div class="dil-kutusu">
+        <a href="hakkimda.html" class="dil-btn">TR</a>
+        <a href="about.html" class="dil-btn aktif">EN</a>
+    </div>
+    
+    
+</body>
+</html>
